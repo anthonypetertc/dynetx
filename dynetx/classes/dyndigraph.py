@@ -111,7 +111,8 @@ class DynDiGraph(nx.DiGraph):
         >>> G = dn.DynDiGraph()
         >>> H = dn.DynDiGraph(edge_removal=True)
         """
-        super(self.__class__, self).__init__(data, **attr)
+        #super(self.__class__, self).__init__(data, **attr)
+        super().__init__(data, **attr)
         self.time_to_edge = defaultdict(int)
         self.snapshots = {}
         self.edge_removal = edge_removal
