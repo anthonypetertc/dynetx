@@ -281,7 +281,7 @@ class DynDiGraph(nx.DiGraph):
         if self.edge_removal:
             if spans[0][0] <= t <= spans[-1][1]:
                 for s in spans:
-                    if t in range(s[0], s[1] + 1):
+                    if s[0] <= t <= s[1]:
                         return True
         else:
             if spans[0][0] <= t <= max(self.temporal_snapshots_ids()):
